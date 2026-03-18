@@ -1,0 +1,188 @@
+.about-section {
+    min-height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+    font-family: 'Vesper Libre', serif; /* Основной шрифт секции */
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1300px;
+    width: 100%;
+}
+
+/* Текстовая часть */
+.about-name {
+    font-family: 'Viaoda Libre', serif;
+    font-size: 5.5rem;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.about-location {
+    font-size: 1.6rem;
+    color: #999;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.about-description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #777;
+    max-width: 480px;
+    margin-bottom: 50px;
+}
+
+/* Кнопки */
+.about-buttons {
+    display: flex;
+    gap: 25px;
+}
+
+.btn-black {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 18px 65px;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-black:hover {
+  background-color: #ff0000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+}
+
+.btn-outline {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 18px 65px;
+  border-radius: 50px;
+  border: 2px solid #000;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background-color: #ff0000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+}
+
+/* КОМПОЗИЦИЯ СПРАВА */
+.about-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Рамка */
+.image-frame {
+    position: absolute;
+    width: 380px;
+    height: 500px;
+    border: 4px solid #2a1f1d;
+    z-index: 1;
+}
+
+/* Фото */
+.about-photo {
+    position: relative;
+    z-index: 10;
+    width: 480px; /* Чуть шире рамки для эффекта объема */
+    height: auto;
+    bottom: -20px; /* Сдвиг вниз, чтобы вылезать за рамку */
+}
+
+/* Круг слева */
+.circle-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    left: 180px;
+    top: 40%;
+    z-index: 5;
+}
+
+/* Треугольник сверху */
+.triangle-item {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 35px solid #000;
+    top: 15%;
+    right: 300x;
+    z-index: 5;
+    background: none;
+}
+/* Чтобы треугольник был полым как на макете */
+.triangle-item::after {
+    content: '';
+    position: absolute;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 28px solid #fff;
+    left: -16px;
+    top: 4px;
+}
+
+/* Штрихи/линии у плеча */
+.lines-item {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 80px;
+    top: 35%;
+    background-image: linear-gradient(to bottom, #000 2px, transparent 2px);
+    background-size: 100% 8px;
+    z-index: 5;
+    transform: rotate(-45deg);
+}
+
+/* Надпись Альфонсо */
+.photo-label {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Viaoda Libre', serif;
+    font-size: 6rem;
+    color: #8b2d2d;
+    z-index: 15;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Адаптив */
+@media (max-width: 1100px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .about-text-content { order: 2; }
+    .about-image-wrapper { order: 1; transform: scale(0.8); }
+    .about-buttons { justify-content: center; }
+}
