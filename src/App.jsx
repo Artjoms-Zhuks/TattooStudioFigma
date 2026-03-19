@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-// ... остальные импорты
 import Header from './components/Header';
 import Home from './pages/Home';
 import Designs from './pages/Designs';
@@ -8,14 +7,16 @@ import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import './App.css';
 
-
 function AppContent() {
   const location = useLocation();
+  // Учитываем, что на GitHub Pages к пути может добавиться префикс, 
+  // но useLocation обычно отдает путь относительно basename
   const showFooter = location.pathname !== '/contact';
 
   return (
     <>
       <Header />
+      {/* ЛИШНИЙ ТЕГ <Router> ОТСЮДА УДАЛИЛИ */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/design" element={<Designs />} />
@@ -27,10 +28,10 @@ function AppContent() {
   );
 }
 
-// В главном App просто рендерим Router и контент
 function App() {
   return (
-    <Router>
+    // ПЕРЕДАЕМ basename СЮДА
+    <Router basename="/TattooStudioFigma">
       <AppContent />
     </Router>
   );

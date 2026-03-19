@@ -1,0 +1,60 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 8%;
+  background-color: #1a1a1a; 
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  border-bottom: 1px solid #333;
+}
+
+/* Логотип в стиле Viaoda */
+.logo {
+  font-family: 'Viaoda Libre', serif;
+  font-size: 2.2rem; /* Чуть крупнее для акцента */
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-weight: 400; /* У этого шрифта один основной вес */
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 45px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ссылки меню */
+.nav-link {
+  font-family: 'Viaoda Libre', serif;
+  font-size: 1.3rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+/* Эффект наведения — серый цвет */
+.nav-link:hover {
+  color: #888888;
+}
+
+/* Активная страница — красный цвет */
+.nav-link.active {
+  color: #ff0000;
+  /* Можно добавить небольшое свечение, если хочешь эффектности:
+     text-shadow: 0 0 10px rgba(255, 0, 0, 0.3); */
+}
+
+/* Убираем лишние стили для ссылок внутри хедера */
+.header a {
+  text-decoration: none;
+}

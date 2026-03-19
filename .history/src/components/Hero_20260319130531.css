@@ -1,0 +1,192 @@
+/* ОБЩАЯ ОБЕРТКА */
+.hero-page-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* --- БЛОК 1: HERO --- */
+.hero-section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  position: relative;
+  padding: 0 8%;
+}
+
+.hero-bg-text {
+  position: absolute;
+  font-family: 'Viaoda Libre', serif;
+  font-size: 22vw;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px #f0f0f0;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  pointer-events: none;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 2;
+}
+
+.diamond-wrapper {
+  width: 420px;
+  height: 580px;
+  overflow: hidden;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  background: #000;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.hero-content {
+  padding-left: 60px;
+}
+
+.hero-subtitle {
+  font-family: 'Vesper Libre', serif;
+  font-size: 4.5rem;
+  text-decoration: line-through;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.btn-pill {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 18px 65px;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+/* --- БЛОК 2: VARIOUS STYLES (ТЕМНЫЙ) --- */
+.styles-section {
+  background-color: #1a1a1a;
+  padding: 140px 8%;
+  position: relative;
+  min-height: 80vh;
+}
+
+.styles-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.styles-title {
+  font-family: 'Viaoda Libre', serif;
+  font-size: 4rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.styles-visual {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.geners-svg {
+  width: 110%;
+  max-width: 650px;
+  height: auto;
+}
+
+.dope-sticker {
+  position: absolute;
+  top: -70px;
+  left: 10%;
+  width: 150px;
+  z-index: 10;
+}
+
+/* --- АДАПТИВ ДЛЯ МОБИЛЬНЫХ (ГЛАВНЫЕ ПРАВКИ) --- */
+@media (max-width: 768px) {
+  
+  /* 1. Отключаем сетку везде, чтобы элементы не сжимались в колонках */
+  .hero-container, 
+  .styles-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  /* 2. УВЕЛИЧИВАЕМ РОМБ */
+  .diamond-wrapper {
+    width: 320px !important; /* Увеличили */
+    height: 440px !important;
+    margin-bottom: 30px;
+  }
+
+  .hero-content {
+    padding-left: 0 !important;
+  }
+
+  .hero-subtitle {
+    font-size: 3rem !important;
+  }
+
+  /* 3. КНОПКА (Fix для BOOK NOW) */
+  .btn-pill {
+    width: 280px !important;
+    padding: 18px 0 !important;
+    white-space: nowrap !important; /* Запрещаем перенос текста */
+    display: block;
+  }
+
+  /* 4. ГИГАНТСКИЙ GENERS SVG */
+  .styles-section {
+    padding: 100px 5% !important;
+  }
+
+  .styles-visual {
+    width: 100% !important;
+    justify-content: center !important;
+    margin-top: 40px;
+    overflow: visible; /* Чтобы картинка могла выходить за края */
+  }
+
+  .geners-svg {
+    width: 140% !important; /* Делаем шире экрана для эффекта */
+    max-width: none !important;
+    transform: translateX(5%); /* Сдвигаем для композиции */
+  }
+
+  .styles-title {
+    font-size: 3rem !important;
+  }
+
+  /* 5. Наклейка DOPE (чтобы не перекрывала кнопку) */
+  .dope-sticker {
+    width: 100px !important;
+    top: -50px !important;
+    left: 5% !important;
+  }
+}

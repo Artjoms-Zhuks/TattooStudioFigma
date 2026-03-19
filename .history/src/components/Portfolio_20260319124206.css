@@ -1,0 +1,165 @@
+.portfolio-page {
+    background-color: #2b0a0a; /* Тот самый темно-бордовый */
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* Хедер с фоном */
+.portfolio-header {
+    height: 70vh; /* Высота блока как на макете */
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Резервный фон */
+}
+
+/* Стили для фоновой фотографии */
+.portfolio-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.portfolio-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Фото растягивается без искажений */
+    filter: brightness(0.4) grayscale(0.3); /* Затемняем фото, чтобы текст читался */
+}
+
+/* Слой поверх фото для дополнительного затемнения (если нужно) */
+.header-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(43, 10, 10, 0.3); /* Легкий бордовый оттенок поверх фото */
+}
+
+/* Главный заголовок Designs */
+.portfolio-main-title {
+    font-family: 'Viaoda Libre', serif;
+    font-size: 15vw; /* Очень крупный шрифт */
+    color: rgba(255, 255, 255, 0.15); /* Полупрозрачный белый */
+    text-transform: capitalize;
+    letter-spacing: 2rem; /* Большое расстояние между буквами */
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Сетка контента */
+.portfolio-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.portfolio-grid-headers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 50px;
+}
+
+.style-label {
+    font-family: 'Verdana', sans-serif; /* Как ты и просил */
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.portfolio-main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.style-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tatto-card {
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #1a0505;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease;
+}
+
+.tatto-card:hover {
+    transform: scale(1.02);
+}
+
+.tatto-card img {
+    width: 100%;
+    display: block;
+    filter: grayscale(0.8); /* ЧБ эффект */
+    transition: filter 0.4s ease;
+}
+
+.tatto-card:hover img {
+    filter: grayscale(0); /* Проявление цвета при наведении */
+}
+
+/* Боковая надпись SCROLL */
+.scroll-indicator {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.scroll-indicator p {
+    writing-mode: vertical-rl;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.scroll-indicator span {
+    width: 1px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 900px) {
+  .portfolio-main-title { font-size: 20vw; letter-spacing: 0.5rem; }
+
+  .portfolio-grid-headers {
+    display: none; /* Скрываем общий ряд заголовков */
+  }
+
+  .portfolio-main-grid {
+    grid-template-columns: 1fr; /* Колонки в один ряд */
+  }
+
+  /* Чтобы заголовок был над каждой колонкой, добавь в JSX 
+     заголовок внутрь .style-column, либо используй этот хак: */
+  .style-column::before {
+    content: "STYLE";
+    display: block;
+    text-align: center;
+    font-family: 'Viaoda Libre', serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ff3e3e;
+  }
+}

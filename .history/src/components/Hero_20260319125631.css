@@ -1,0 +1,346 @@
+/* ОБЩАЯ ОБЕРТКА СТРАНИЦЫ */
+.hero-page-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* --- БЛОК 1: HERO (БЕЛЫЙ) --- */
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff; /* Белый фон как на макете */
+  position: relative;
+  padding: 0 8%;
+}
+
+/* Фоновый полый текст TATTOO */
+.hero-bg-text {
+  position: absolute;
+  font-family: 'Viaoda Libre', serif;
+  font-size: 22vw;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px #f0f0f0;
+  z-index: 1;
+  white-space: nowrap;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 2;
+}
+
+/* Эффект ромба для фото */
+.diamond-wrapper {
+  width: 420px;
+  height: 580px;
+  overflow: hidden;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Геометрия ромба */
+  background: #000;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1); /* ЧБ эффект */
+}
+
+.hero-content {
+  padding-left: 60px;
+}
+
+.hero-subtitle {
+  font-family: 'Vesper Libre', serif;
+  font-size: 4.5rem;
+  text-decoration: line-through; /* Зачеркивание как на скрине */
+  text-decoration-color: #000;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  line-height: 1.1;
+}
+
+.hero-description {
+  font-family: 'Vesper Libre', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 420px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Кнопка-пилюля */
+.btn-pill {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 18px 65px;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-pill:hover {
+  background-color: #ff0000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+}
+
+/* Боковая панель FAEZ */
+.hero-side-label {
+  position: absolute;
+  right: 5%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-side-label p {
+  writing-mode: vertical-rl;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  color: #333;
+}
+
+.arrow-down {
+  font-size: 2rem;
+  color: #ccc;
+}
+
+/* Декор корона */
+.hero-decor {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 100px;
+  transform: rotate(-10deg);
+}
+
+
+/* --- БЛОК 2: VARIOUS STYLES (ТЕМНЫЙ) --- */
+.styles-section {
+  background-color: #1a1a1a;
+  padding: 140px 8%;
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Наклейка DOPE на стыке блоков */
+.dope-sticker {
+  position: absolute;
+  top: -75px;
+  left: 10%;
+  width: 160px;
+  transform: rotate(-12deg);
+  z-index: 100;
+}
+
+.styles-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.styles-title {
+  font-family: 'Viaoda Libre', serif;
+  font-size: 4rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.styles-description {
+  font-family: 'Vesper Libre', serif;
+  color: #999;
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 45px;
+  font-size: 1.1rem;
+}
+
+.btn-pill.white {
+  background-color: #ffffff;
+  color: #000;
+}
+
+/* Стили для Geners.svg */
+.styles-visual {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.geners-svg {
+  width: 110%;
+  max-width: 650px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+}
+
+.arrow-down-red {
+  position: absolute;
+  bottom: 60px;
+  right: 8%;
+  color: #ff0000;
+  font-size: 2.5rem;
+}
+
+
+/* --- БЛОК 3: TATTOO CULTURE (СВЕТЛЫЙ) --- */
+.culture-section {
+  background-color: #ffffff;
+  padding: 140px 8%;
+}
+
+.culture-container {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.culture-title {
+  font-family: 'Viaoda Libre', serif;
+  font-size: 3.5rem;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+}
+
+.culture-description {
+  font-family: 'Vesper Libre', serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 60px;
+}
+
+.culture-image-small {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+}
+
+.culture-image-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.culture-image-main-container {
+  position: relative;
+  box-shadow: 25px 25px 0px #f7f7f7; /* Декоративная подложка */
+}
+
+.culture-image-main {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(0.3);
+}
+
+/* Красная точка-плей (декор) */
+.play-button-decor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85px;
+  height: 85px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.play-icon {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 24px solid white;
+  margin-left: 6px;
+}
+
+
+@media (max-width: 768px) {
+  .hero-section { padding: 0 5%; }
+  .hero-bg-text { font-size: 35vw; opacity: 0.1; }
+  .hero-subtitle { font-size: 3rem; line-height: 1; }
+  
+  .hero-subtitle { 
+    font-size: 2.8rem; /* Чуть увеличили заголовок */
+  }
+  
+  /* Увеличиваем ромб (было 280х380) */
+  .diamond-wrapper {
+    width: 320px; /* Увеличили */
+    height: 450px;
+    margin: 0 auto 20px auto;
+  }
+
+  .dope-sticker {
+    width: 100px;
+    top: -50px;
+    z-index: 1001;
+    pointer-events: none;
+  }
+
+  /* Исправляем развалившуюся кнопку */
+  /* 3. КНОПКА BOOK NOW (в одну строку) */
+  .btn-pill {
+    padding: 18px 0;
+    width: 280px; /* Фиксированная ширина, чтобы не сжималась */
+    display: block;
+    margin: 0 auto;
+    white-space: nowrap; /* Запрет переноса */
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding-left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .geners-svg {
+    width: 100%;
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,212 @@
+/* Общий фон страницы на весь экран */
+.booking-page {
+    background-color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Скрываем стандартный футер, если он есть в DOM */
+/* (Работает, если класс футера .footer-section) */
+:global(.footer-section) {
+    display: none !important;
+}
+
+.booking-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 8%;
+    position: relative;
+}
+
+.booking-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Левая часть с формой чуть шире */
+    gap: 100px; /* Увеличили расстояние между блоками */
+    width: 100%;
+    max-width: 1400px; /* Увеличили общую ширину таблицы */
+}
+
+/* ФОРМА */
+.form-wrapper {
+    width: 100%;
+}
+
+.form-frame {
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding: 40px; /* Больше внутренних отступов */
+    position: relative;
+}
+
+.form-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: #fff;
+}
+
+.input-group {
+    margin-bottom: 30px; /* Больше места между полями */
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    background: #f1f1e6;
+    border-radius: 2px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-send {
+    background: #000;
+    color: #fff;
+    width: 180px;
+    height: 60px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* СОЦСЕТИ */
+.socials-wrapper {
+    display:flex;
+    flex-direction: column;
+    padding-top: 150px;
+    gap: 80px; /* Больше пространства между строками соцсетей */
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.social-item.reverse {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.line.long {
+    width: 120px; /* Сделали линии длиннее */
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.social-item a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* БОКОВЫЕ НАДПИСИ */
+.side-footer-labels {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+
+.side-label {
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 6px;
+    color: #fff;
+    opacity: 0.6;
+}
+
+
+/* Базовый стиль ссылки */
+.social-link {
+    font-size: 1.1rem;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.social-link:hover {
+    opacity: 0.7;
+}
+
+/* Цвета по именам из content.js */
+.social-link.facebook { color: #3b5998; }
+.social-link.instagram { color: #e1306c; }
+.social-link.twitter { color: #1da1f2; }
+.social-link.youtube { color: #ff0000; }
+.social-link.telegram { color: #0088cc; }
+
+/* Стили для иконок внутри кружков */
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background: #333; /* Темный фон кружка как на макете */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.social-icon img {
+    width: 60%; /* Размер самой иконки внутри круга */
+    height: auto;
+    /*filter: brightness(0) invert(1); /* Делает иконки белыми, если они темные */
+}
+
+/* Настройка textarea */
+.message-group textarea {
+    min-height: 200px;
+    width: 100%;
+    background: #f1f1e6;
+    border: none;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    grid-template-columns: 1fr; /* Форма и соцсети друг под другом */
+    gap: 40px;
+  }
+
+  .form-frame {
+    padding: 20px; /* Уменьшаем отступы */
+  }
+
+  .socials-wrapper {
+    padding-top: 20px;
+    gap: 40px;
+  }
+
+  .social-item {
+    flex-direction: column !important; /* Иконка над ссылкой */
+    gap: 10px;
+  }
+
+  .line.long {
+    width: 50px; /* Короткая линия */
+  }
+
+  /* Убираем боковые надписи, они рвут ширину */
+  .side-footer-labels {
+    display: none;
+  }
+
+  .btn-send {
+    width: 100%; /* Кнопка на весь экран */
+  }
+}

@@ -1,0 +1,337 @@
+/* ОБЩАЯ ОБЕРТКА СТРАНИЦЫ */
+.hero-page-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* --- БЛОК 1: HERO (БЕЛЫЙ) --- */
+.hero-section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  position: relative;
+  padding: 80px 8%;
+}
+
+.hero-bg-text {
+  position: absolute;
+  font-family: 'Viaoda Libre', serif;
+  font-size: 22vw;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px #f0f0f0;
+  z-index: 1;
+  white-space: nowrap;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 2;
+}
+
+.diamond-wrapper {
+  width: 420px;
+  height: 580px;
+  overflow: hidden;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  background: #000;
+  margin: 0 auto;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.hero-content {
+  padding-left: 60px;
+}
+
+.hero-subtitle {
+  font-family: 'Vesper Libre', serif;
+  font-size: 4.5rem;
+  text-decoration: line-through;
+  text-decoration-color: #000;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  line-height: 1.1;
+}
+
+.hero-description {
+  font-family: 'Vesper Libre', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 420px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.btn-pill {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 18px 65px;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-pill:hover {
+  background-color: #ff0000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+}
+
+.hero-side-label {
+  position: absolute;
+  right: 5%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-side-label p {
+  writing-mode: vertical-rl;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  color: #333;
+}
+
+.arrow-down {
+  font-size: 2rem;
+  color: #ccc;
+}
+
+.hero-decor {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 100px;
+  transform: rotate(-10deg);
+}
+
+/* --- БЛОК 2: VARIOUS STYLES (ТЕМНЫЙ) --- */
+.styles-section {
+  background-color: #1a1a1a;
+  padding: 140px 8%;
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.dope-sticker {
+  position: absolute;
+  top: -75px;
+  left: 10%;
+  width: 160px;
+  transform: rotate(-12deg);
+  z-index: 100;
+}
+
+.styles-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.styles-title {
+  font-family: 'Viaoda Libre', serif;
+  font-size: 4rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.styles-description {
+  font-family: 'Vesper Libre', serif;
+  color: #999;
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 45px;
+  font-size: 1.1rem;
+}
+
+.btn-pill.white {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.styles-visual {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.geners-svg {
+  width: 110%;
+  max-width: 650px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+}
+
+/* --- БЛОК 3: CULTURE --- */
+/* --- БЛОК 3: CULTURE --- */
+.culture-section {
+  background-color: #ffffff;
+  padding: 140px 8%;
+  overflow: hidden;
+}
+
+.culture-container {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* Контейнер для маленькой круглой фотки */
+.culture-image-small {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+  margin-top: 40px;
+}
+
+.culture-image-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.culture-image-main-container {
+  position: relative;
+  /* Светлая подложка как на макете */
+  box-shadow: 25px 25px 0px #f7f7f7; 
+}
+
+.culture-image-main {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(0.3);
+}
+
+/* --- АДАПТИВ (MOBILE) --- */
+@media (max-width: 768px) {
+  /* Сбрасываем сетки в одну колонку */
+  .hero-container, .styles-container, .culture-container {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-section { padding: 60px 5%; }
+  
+  /* УВЕЛИЧЕННЫЙ РОМБ */
+  .diamond-wrapper {
+    width: 85vw !important;
+    height: 50vh !important;
+    max-width: 380px;
+    margin-bottom: 20px;
+  }
+
+  .hero-content { padding-left: 0; }
+  .hero-subtitle { font-size: 2.8rem; }
+  .hero-bg-text { font-size: 35vw; opacity: 0.1; }
+
+  /* КНОПКА (Фикс развала) */
+  .btn-pill {
+    padding: 18px 0 !important;
+    width: 280px !important;
+    display: block !important;
+    margin: 0 auto !important;
+    white-space: nowrap !important;
+    font-size: 0.9rem;
+  }
+
+  /* УВЕЛИЧЕННЫЙ GENERS SVG */
+  .styles-section { padding: 80px 5%; }
+  
+  .styles-visual {
+    width: 100vw !important;
+    justify-content: center !important;
+    margin-top: 20px;
+    overflow: visible;
+  }
+
+  .geners-svg {
+    width: 130% !important; /* Намного больше экрана */
+    max-width: none !important;
+    transform: translateX(10%); /* Центрируем при увеличении */
+  }
+
+  .styles-title { font-size: 2.8rem; }
+  
+  .dope-sticker {
+    width: 100px;
+    top: -40px;
+    left: 5%;
+  }
+
+.culture-section {
+    padding: 60px 5% !important;
+  }
+
+  .culture-container {
+    display: flex !important;
+    flex-direction: column-reverse !important; /* Главное фото будет НАД текстом */
+    gap: 40px !important;
+  }
+
+  .culture-image-main-container {
+    width: 100%;
+    box-shadow: 15px 15px 0px #f7f7f7; /* Уменьшаем тень на мобилке */
+  }
+
+  .culture-image-small {
+    width: 180px !important; /* Уменьшаем круглую фотку */
+    height: 180px !important;
+    margin: 20px auto 0 auto !important; /* Центрируем под текстом */
+  }
+
+  .culture-title {
+    font-size: 2.8rem !important;
+    margin-bottom: 20px;
+  }
+
+  .culture-description {
+    font-size: 1rem !important;
+    margin-bottom: 30px;
+  }
+}

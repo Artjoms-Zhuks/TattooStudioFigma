@@ -1,0 +1,214 @@
+.about-section {
+    min-height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 5%;
+    overflow: hidden;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Отдаем правой части чуть больше места */
+    gap: 100px;
+    align-items: center;
+    max-width: 1400px; /* Увеличили общий контейнер */
+    width: 100%;
+}
+
+/* --- ТЕКСТОВАЯ ЧАСТЬ --- */
+.about-text-content {
+    z-index: 20; /* Текст всегда выше всего */
+}
+
+/* --- ТЕКСТОВАЯ ЧАСТЬ --- */
+.about-name {
+    font-family: 'Viaoda Libre', serif;
+    font-size: 6.5rem; /* Увеличили */
+    margin-bottom: 25px;
+    color: #000;
+    line-height: 0.9;
+}
+
+.about-location {
+    font-family: 'Vesper Libre', serif;
+    font-size: 1.4rem;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.about-description {
+    font-family: 'Vesper Libre', serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 550px; /* Позволяем тексту быть чуть шире */
+    margin-bottom: 50px;
+}
+
+.about-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Стили ссылок-кнопок */
+.btn-black, .btn-outline {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    min-width: 180px;
+    padding: 18px 30px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-black {
+    background-color: #0a0a0a;
+    color: #fff;
+    border: 2px solid #0a0a0a;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.btn-black:hover, .btn-outline:hover {
+    background-color: #8b2d2d;
+    border-color: #8b2d2d;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* --- ПРАВАЯ ЧАСТЬ: ГИГАНТСКАЯ КОМПОЗИЦИЯ --- */
+.about-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 750px; /* Увеличили высоту контейнера */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Большая черная рамка */
+.image-frame {
+    position: absolute;
+    width: 450px;  /* Увеличили с 320 */
+    height: 600px; /* Увеличили с 450 */
+    border: 3px solid #1a1a1a;
+    z-index: 1;
+    /* Центрируем и чуть смещаем влево, чтобы рука выходила за рамку вправо */
+    transform: translate(-10%, -5%); 
+}
+
+/* Фотография - должна быть крупной */
+/* Главное фото */
+.about-photo {
+    position: relative;
+    z-index: 10;
+    width: 650px; /* Сделали реально большим */
+    height: auto;
+    object-fit: contain;
+    /* Эффект: фото стоит на нижней линии рамки, но голова и рука выходят за пределы */
+    margin-bottom: -50px; 
+    margin-left: 50px;
+    filter: drop-shadow(20px 20px 40px rgba(0,0,0,0.1));
+}
+
+/* Имя Alfonso (красное) */
+.photo-label {
+    position: absolute;
+    bottom: 80px; /* Поднимаем повыше на фото */
+    left: 45%;
+    transform: translateX(-50%);
+    font-family: 'Viaoda Libre', serif;
+    font-size: 9rem; /* Очень крупно */
+    color: #8b2d2d;
+    z-index: 15;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* ГЕОМЕТРИЯ (ДЕКОР) */
+.circle-item {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    top: 25%;
+    left: 15%;
+    z-index: 5;
+}
+
+.triangle-item {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 15%;
+    right: 15%;
+    z-index: 5;
+}
+
+.lines-item {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: 20%;
+    right: 10%;
+    background-image: repeating-linear-gradient(0deg, #000, #000 2px, transparent 2px, transparent 8px);
+    z-index: 5;
+    transform: rotate(-45deg);
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width: 968px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-text-content {
+        order: 2; /* Текст под фото */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image-wrapper {
+        order: 1;
+        height: 450px;
+    }
+
+    .about-photo {
+        width: 320px;
+        margin: 0;
+    }
+
+    .image-frame {
+        width: 240px;
+        height: 320px;
+    }
+
+    .photo-label {
+        font-size: 4rem;
+        bottom: 10px;
+    }
+
+    .about-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .circle-item, .triangle-item, .lines-item {
+        display: none;
+    }
+}

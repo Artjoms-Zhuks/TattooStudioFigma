@@ -1,0 +1,55 @@
+:root {
+  --bg-color: #0d0d0d; /* Глубокий черный */
+  --accent-color: #ff3e3e; /* Дерзкий красный */
+  --text-color: #ffffff;
+  --secondary-text: #888888;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif; /* Позже заменим на более агрессивный */
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Убираем стандартные синие ссылки */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Кастомный скроллбар в стиле тату-студии */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+}
+
+:root {
+  --bg: #0a0a0a;
+  --text: #ffffff;
+  --accent: #ff0000; /* Тот самый красный из Figma */
+  --secondary: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif; /* Или любой стандартный sans-serif */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

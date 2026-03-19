@@ -1,0 +1,197 @@
+/* ОБЩИЙ КОНТЕЙНЕР ПОРТФОЛИО */
+.portfolio-page {
+    background-color: #1a0505; /* Глубокий темный бордовый */
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* --- ХЕДЕР С ФОНОМ --- */
+.portfolio-header {
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.portfolio-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3) grayscale(0.5);
+}
+
+.header-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.portfolio-main-title {
+    font-family: 'Viaoda Libre', serif;
+    font-size: clamp(4rem, 15vw, 12rem);
+    color: rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 2rem;
+    margin: 0;
+    line-height: 1;
+}
+
+/* --- СЕТКА И КОНТЕНТ --- */
+.portfolio-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 5%;
+}
+
+/* Заголовки для десктопа */
+.portfolio-grid-headers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.style-label {
+    font-family: 'Verdana', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 6px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 400;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* Заголовки для мобилок (скрыты по умолчанию) */
+.mobile-style-label {
+    display: none;
+    font-family: 'Verdana', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    color: #fff;
+    margin: 50px 0 25px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+.portfolio-main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: start;
+}
+
+.style-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* --- КАРТОЧКИ --- */
+.tatto-card {
+    width: 100%;
+    position: relative;
+    background-color: #000;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.tatto-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(1) contrast(1.1);
+    transition: all 0.6s ease;
+}
+
+/* Эффект при наведении */
+.tatto-card:hover {
+    transform: translateY(-10px);
+}
+
+.tatto-card:hover img {
+    filter: grayscale(0) contrast(1);
+    transform: scale(1.05);
+}
+
+/* --- СКРОЛЛ И ДЕКОР --- */
+.scroll-indicator {
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.scroll-indicator p {
+    writing-mode: vertical-rl;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+}
+
+.scroll-indicator span {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5), transparent);
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+@media (max-width: 1024px) {
+    .portfolio-main-grid { gap: 20px; }
+    .portfolio-grid-headers { gap: 20px; }
+}
+
+@media (max-width: 768px) {
+    .portfolio-header { height: 40vh; }
+    
+    .portfolio-main-title {
+        letter-spacing: 0.5rem;
+        font-size: 15vw;
+    }
+
+    .portfolio-grid-headers {
+        display: none; /* Скрываем верхнюю строку заголовков */
+    }
+
+    .portfolio-main-grid {
+        grid-template-columns: 1fr; /* Колонки в один ряд */
+        gap: 0;
+    }
+
+    .mobile-style-label {
+        display: block; /* Показываем STYLE ONE/TWO/THREE внутри колонок */
+    }
+
+    .style-column {
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+
+    .scroll-indicator {
+        display: none; /* Убираем на мобилках, чтобы не мешал */
+    }
+
+    .portfolio-container {
+        padding: 40px 5%;
+    }
+}
