@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Добавьте эту строку точно как здесь
+  base: '/TattooStudioFigma/', // Добавьте эту строку точно как здесь
 })
