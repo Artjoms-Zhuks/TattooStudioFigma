@@ -31,7 +31,7 @@ function AppContent() {
 function App() {
   return (
     // ПЕРЕДАЕМ basename СЮДА
-    <Router>
+    <Router basename="/TattooStudioFigma">
       <AppContent />
     </Router>
   );
